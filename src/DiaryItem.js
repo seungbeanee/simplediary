@@ -1,6 +1,12 @@
-import { useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { DiaryDispatchContext } from "./App";
 
-const DiaryItem = ({ onEdit, onRemove, author, content, created_date, emotion, id }) => {
+const DiaryItem = ({ author, content, created_date, emotion, id }) => {
+
+    // useEffect(()=>{
+    //     console.log(`${id}번째 아이템 렌더`)
+    // })
+    const {onRemove, onEdit} = useContext(DiaryDispatchContext);
 
     // 수정하기를 위한 상태 값 (true: 수정 / false: 수정아님)
     const [isEdit, setIsEdit] = useState(false);
@@ -74,4 +80,4 @@ const DiaryItem = ({ onEdit, onRemove, author, content, created_date, emotion, i
     )
 }
 
-export default DiaryItem;
+export default React.memo(DiaryItem);
