@@ -173,7 +173,7 @@ function App() {
           <div>기분 좋은 일기 개수 : {badCount}</div>
           <div>기분 좋은 일기 비율 : {goodRatio}</div>
           {/* <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data}/> */}
-          <DiaryListA/>
+          <DiaryList />
         </div>
       </DiaryDispatchContext.Provider>
     </DiaryStateContext.Provider>
